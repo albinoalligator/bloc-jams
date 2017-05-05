@@ -44,20 +44,20 @@ var createSongRow = function(songNumber, songName, songLength) {
     var clickHandler = function(){
         var songNumber = $(this).attr('data-song-number');
         
-        if(currentPlayingSong !== null) {
+        if(currentlyPlayingSong !== null) {
             
-            var currentPlayingCell = $('.song-item-number[data-song-number=" ' + currentPlayingSong + '"]');
-            currentPlayingCell.html(currentPlayingSong);        
+            var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSong + '"]');
+            currentlyPlayingCell.html(currentlyPlayingSong);        
                 
         }
         
-        if(currentPlayingSong !== songNumber) {
+        if(currentlyPlayingSong !== songNumber) {
             $(this).html(pauseButtonTemplate);
-            currentPlayingSong = songNumber;
+            currentlyPlayingSong = songNumber;
             
-        }else if (currentPlayingSong === songNumber){
+        }else if (currentlyPlayingSong === songNumber){
             $(this).html(playButtonTemplate);
-            currentPlayingSong = null;
+            currentlyPlayingSong = null;
         }
         
         
@@ -69,7 +69,7 @@ var createSongRow = function(songNumber, songName, songLength) {
           var songNumberCell = $(this).find('.song-item-number');
           var songNumber = songNumberCell.attr('data-song-number');
           
-          if( songNumber !== currentPlayingSong){
+          if( songNumber !== currentlyPlayingSong){
               songNumberCell.html(playButtonTemplate);
               
           }   
@@ -80,7 +80,7 @@ var createSongRow = function(songNumber, songName, songLength) {
           var songNumberCell = $(this).find('.song-item-number');
           var songNumber = songNumberCell.attr('data-song-number');
           
-          if(songNumber !== currentPlayingSong){
+          if(songNumber !== currentlyPlayingSong){
               songNumberCell.html(songNumber);
           }
           
@@ -123,7 +123,7 @@ var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
 //store state of playing song
-var currentPlayingSong = null;
+var currentlyPlayingSong = null;
  
  $(document).ready(function() {
      setCurrentAlbum(albumPicasso);
