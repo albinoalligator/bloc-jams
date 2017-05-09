@@ -1,4 +1,3 @@
-
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -15,22 +14,6 @@ var createSongRow = function(songNumber, songName, songLength) {
     
         var songNumber = parseInt($(this).attr('data-song-number'));
         
-<<<<<<< HEAD
-        if(currentlyPlayingSong !== null) {
-            
-            var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSong + '"]');
-            currentlyPlayingCell.html(currentlyPlayingSong);        
-                
-        }
-        
-        if(currentlyPlayingSong !== songNumber) {
-            $(this).html(pauseButtonTemplate);
-            currentlyPlayingSong = songNumber;
-            
-        }else if (currentlyPlayingSong === songNumber){
-            $(this).html(playButtonTemplate);
-            currentlyPlayingSong = null;
-=======
         if (currentlyPlayingSongNumber !== null) {
             
              var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]');
@@ -49,7 +32,6 @@ var createSongRow = function(songNumber, songName, songLength) {
             $('.main-controls .play-pause').html(playerBarPlayButton);
             currentlyPlayingSongNumber = null;
              currentSongFromAlbum = null;
->>>>>>> checkpoint-19
         }
         
         
@@ -61,11 +43,7 @@ var createSongRow = function(songNumber, songName, songLength) {
           var songNumberCell = $(this).find('.song-item-number');
           var songNumber = parseInt(songNumberCell.attr('data-song-number'));
           
-<<<<<<< HEAD
-          if( songNumber !== currentlyPlayingSong){
-=======
            if (songNumber !== currentlyPlayingSongNumber) {
->>>>>>> checkpoint-19
               songNumberCell.html(playButtonTemplate);
               
           }   
@@ -76,11 +54,7 @@ var createSongRow = function(songNumber, songName, songLength) {
           var songNumberCell = $(this).find('.song-item-number');
           var songNumber = parseInt(songNumberCell.attr('data-song-number'));
           
-<<<<<<< HEAD
-          if(songNumber !== currentlyPlayingSong){
-=======
            if (songNumber !== currentlyPlayingSongNumber) {
->>>>>>> checkpoint-19
               songNumberCell.html(songNumber);
           }
           
@@ -193,13 +167,8 @@ var currentAlbum = null;
 var currentlyPlayingSongNumber = null;
 var currentSongFromAlbum = null;
 
-<<<<<<< HEAD
-//store state of playing song
-var currentlyPlayingSong = null;
-=======
  var $previousButton = $('.main-controls .previous');
  var $nextButton = $('.main-controls .next');
->>>>>>> checkpoint-19
  
  $(document).ready(function() {
      setCurrentAlbum(albumPicasso);
@@ -207,6 +176,20 @@ var currentlyPlayingSong = null;
      $nextButton.click(nextSong);
      
  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
