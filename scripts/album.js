@@ -12,7 +12,6 @@ var createSongRow = function(songNumber, songName, songLength) {
     
     
     var clickHandler = function(){
-        debugger
     
         var songNumber = parseInt($(this).attr('data-song-number'));
         
