@@ -44,7 +44,7 @@ var createSongRow = function(songNumber, songName, songLength) {
      var $row = $(template);
     
     
-    var clickHandler = function(){
+var clickHandler = function(){
     
         var songNumber = parseInt($(this).attr('data-song-number'));
         
@@ -75,6 +75,8 @@ var createSongRow = function(songNumber, songName, songLength) {
                 $(this).html(pauseButtonTemplate);
                 $('.main-controls .play-pause').html(playerBarPauseButton);
                 currentSoundFile.play();
+                updateSeekBarWhileSongPlays();
+                
             } else {
                 $(this).html(playButtonTemplate);
                 $('.main-controls .play-pause').html(playerBarPlayButton);
@@ -221,6 +223,7 @@ var nextSong = function() {
  
     setSong(currentSongIndex + 1);
     currentSoundFile.play();
+    updateSeekBarWhileSongPlays();
 
  
     updatePlayerBarSong();
@@ -246,6 +249,7 @@ var previousSong = function() {
 
     setSong(currentSongIndex + 1);
     currentSoundFile.play();
+    updateSeekBarWhileSongPlays();
 
     
     updatePlayerBarSong();
